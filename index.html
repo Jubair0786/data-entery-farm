@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mohd jubair</title>
+    <link rel="stylesheet" type="text/css" href="/style/Style.css">
+</head>
+
+<body>
+    <div class="container">
+           <form autocapitalize="off" method="post" name="google-sheet">
+        <h3><center>**ADDRESS FORM**</center></h3>
+        <input type="text" placeholder="type your Name here"name="name">
+        <select name="gender">
+            <option value="Not select">select an Gender</option>
+            <option value="Male">Male </option>
+            <option value="Female">Femal </option>
+            <option value="NOther">Other</option>
+        </select>
+        <input type="email" placeholder="type your Email here"name="email">
+        <input type="contact" placeholder="type your Number here"name="mobile">
+        <input type="whatsno" placeholder="type your Whatsno here"name="whatsno">
+        <input type="state" placeholder="type your state here"name="state">
+        <input type="district" placeholder="type your district here"name="district">
+        <input type="father name" placeholder="type your Father Name here"name="fathername">
+        <input type="mother neme" placeholder="type your Mother Name here"name="mothername">
+       
+        <select name="eduction">
+            <option value="NOT selected">select an Eduction</option>
+            <option value="BBA">BBA </option>
+            <option value="B.TECH">B.TECH </option>
+            <option value="BA">BA </option>
+            <option value="BSC">BSC </option>
+            <option value="MSC">MSC </option>
+            <option value="M.TECH">M.TECH </option>
+            <option value="BCA">BCA </option>
+            <option value="MBS">MBA </option>
+            <option value="BSC IT">BSC IT</option>
+            <option value="UNGERUGEAT">UNGERUGEAT</option>
+        </select>
+        
+        <button type="submit" name="submit">Send</button>
+        <button type="reset" class="Reset">Reset</button>
+        
+
+     </form>
+    </div>
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxpdfHVzcyoNsxTltMApS1io9pDWgomyCMuVRUB16Z2bhEk3zrbn_a7LB60nLWdh0gw/exec'
+        const form = document.forms['google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>
